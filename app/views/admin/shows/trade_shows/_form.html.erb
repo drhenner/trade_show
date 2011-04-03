@@ -1,0 +1,50 @@
+<% if @trade_show.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@trade_show.errors.count, "error") %> prohibited this trade_show from being saved:</h2>
+
+    <ul>
+    <% @trade_show.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city_id %><br />
+    <%= f.select :city_id, @cities %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_date %><br />
+    <%= f.date_select :end_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :short_description %><br />
+    <%= f.text_field :short_description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :set_keywords %><br />
+    <%= f.text_field :set_keywords %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>

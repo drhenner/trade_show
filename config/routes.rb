@@ -119,6 +119,10 @@ Hadean::Application.routes.draw do # |map|
       end
     end
 
+    namespace :shows do
+      resources :trade_shows
+    end
+
     namespace :rma do
       resources  :orders do
         resources  :return_authorizations do

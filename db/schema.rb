@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110327185826) do
+ActiveRecord::Schema.define(:version => 20110403062316) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name",                                                           :null => false
@@ -143,10 +143,10 @@ ActiveRecord::Schema.define(:version => 20110327185826) do
 
   create_table "contracts", :force => true do |t|
     t.string   "name"
-    t.integer  "brand_id"
-    t.decimal  "flash_percent", :precision => 10, :scale => 0
-    t.decimal  "store_percent", :precision => 10, :scale => 0
-    t.date     "start_date"
+    t.integer  "brand_id",                                    :null => false
+    t.decimal  "flash_percent", :precision => 8, :scale => 2, :null => false
+    t.decimal  "store_percent", :precision => 8, :scale => 2, :null => false
+    t.date     "start_date",                                  :null => false
     t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -675,6 +675,42 @@ ActiveRecord::Schema.define(:version => 20110327185826) do
   add_index "tickets", ["brand_id"], :name => "index_tickets_on_brand_id"
   add_index "tickets", ["subject"], :name => "tickets_subject_ten", :length => {"subject"=>10}
   add_index "tickets", ["user_id"], :name => "index_tickets_on_user_id"
+
+  create_table "trade_show_companies", :force => true do |t|
+    t.integer  "company_id"
+    t.integer  "trade_show_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trade_show_trade_show_types", :force => true do |t|
+    t.integer  "trade_show_id"
+    t.integer  "trade_show_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trade_show_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trade_shows", :force => true do |t|
+    t.string   "name"
+    t.integer  "city_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "short_description"
+    t.text     "description"
+    t.text     "keywords"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "trade_shows", ["city_id"], :name => "index_trade_shows_on_city_id"
+  add_index "trade_shows", ["end_date"], :name => "index_trade_shows_on_end_date"
+  add_index "trade_shows", ["start_date"], :name => "index_trade_shows_on_start_date"
 
   create_table "transaction_accounts", :force => true do |t|
     t.string   "name"

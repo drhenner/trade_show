@@ -1,0 +1,42 @@
+<h1> Trade Show </h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @trade_show.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @trade_show.city_name %>
+</p>
+
+<p>
+  <strong>Starts on:</strong>
+  <%= @trade_show.display_start_date %>
+</p>
+
+<p>
+  <strong>End Date:</strong>
+  <%= @trade_show.display_end_date %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @trade_show.set_keywords %>
+</p>
+
+<p>
+  <strong>Short Description:</strong>
+  <%= @trade_show.short_description %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @trade_show.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_shows_trade_show_path(@trade_show), :class => 'button' %> |
+  <%= link_to "Destroy", admin_shows_trade_show_path(@trade_show), :confirm => 'Are you sure?', :method => :delete, :class => 'button' %> |
+  <%= link_to "View All", admin_shows_trade_shows_path, :class => 'button' %>
+</p>
