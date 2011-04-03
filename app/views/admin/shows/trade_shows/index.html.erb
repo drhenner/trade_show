@@ -5,24 +5,28 @@
 <h1> Trade Shows </h1>
 
 <table class='pretty_table'>
-  <tr>
-    <th>Name</th>
-    <th>City</th>
-    <th>Starts</th>
-    <th>Ends</th>
-    <th></th><th></th><th></th>
-  </tr>
-  <% for trade_show in @trade_shows %>
+  <thead>
     <tr>
-      <td><%= trade_show.name %></td>
-      <td><%= trade_show.city_name %></td>
-      <td><%= trade_show.display_start_date %></td>
-      <td><%= trade_show.display_end_date %></td>
-      <td><%= link_to "Show", admin_shows_trade_show_path(trade_show) %></td>
-      <td><%= link_to "Edit", edit_admin_shows_trade_show_path(trade_show) %></td>
-      <td><%= link_to "Destroy", admin_shows_trade_show_path(trade_show), :confirm => 'Are you sure?', :method => :delete %></td>
+      <th>Name</th>
+      <th>City</th>
+      <th>Starts</th>
+      <th>Ends</th>
+      <th></th><th></th><th></th>
     </tr>
-  <% end %>
+  </thead>
+  <tbody>
+    <% for trade_show in @trade_shows %>
+        <tr>
+          <td><%= trade_show.name %></td>
+          <td><%= trade_show.city_name %></td>
+          <td><%= trade_show.display_start_date %></td>
+          <td><%= trade_show.display_end_date %></td>
+          <td><%= link_to "Show", admin_shows_trade_show_path(trade_show) %></td>
+          <td><%= link_to "Edit", edit_admin_shows_trade_show_path(trade_show) %></td>
+          <td><%= link_to "Destroy", admin_shows_trade_show_path(trade_show), :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <p><%= link_to "New Trade Show", new_admin_shows_trade_show_path, :class => 'button' %></p>
