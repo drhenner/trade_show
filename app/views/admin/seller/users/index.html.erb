@@ -6,12 +6,14 @@
 <h1> Users </h1>
 
 <table class='pretty_table'>
-  <tr>
-    <th>Name</th>
-    <th>Company</th>
-    <th></th>
-    <th></th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Company</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
   <% for user in @users %>
     <tr>
       <td><%= user.name %></td>

@@ -2,9 +2,11 @@
 <h1> Trade Show Types </h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
   <% for trade_show_type in @trade_show_types %>
     <tr>
       <td><%= trade_show_type.name %></td>

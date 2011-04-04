@@ -6,9 +6,11 @@
 <h1> Comments </h1>
 
 <table class='pretty_table'>
-  <tr>
-    <th>Details</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Details</th>
+    </tr>
+  </thead>
   <% for comment in @comments %>
     <tr>
       <td><%= comment.note %></td>

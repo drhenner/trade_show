@@ -6,9 +6,11 @@
 <h1> Companies </h1>
 
 <table class='pretty_table'>
-  <tr>
-    <th>Name</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
   <% for company in @companies %>
     <tr>
       <td><%= company.name %></td>

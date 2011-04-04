@@ -6,9 +6,11 @@
 <h1> Owners </h1>
 
 <table class='pretty_table'>
-  <tr>
-    <th>Name</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
   <% for owner in @owners %>
     <tr>
       <td><%= owner.name %></td>

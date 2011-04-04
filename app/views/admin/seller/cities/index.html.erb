@@ -5,13 +5,15 @@
 <h1> Cities </h1>
 
 <table class='pretty_table'>
-  <tr>
-    <th>Name</th>
-    <th>State</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>State</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
   <% for city in @cities %>
     <tr>
       <td><%= city.name %></td>
