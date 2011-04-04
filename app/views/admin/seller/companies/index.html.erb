@@ -1,7 +1,11 @@
+<% content_for :head do -%>
+  <%= stylesheet_link_tag 'tables.css' %>
+<% end %>
+
 <%= render :partial => '/admin/seller/sub_header'%>
 <h1> Companies </h1>
 
-<table>
+<table class='pretty_table'>
   <tr>
     <th>Name</th>
   </tr>
