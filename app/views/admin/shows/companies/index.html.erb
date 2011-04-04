@@ -1,0 +1,18 @@
+<%= render :partial => '/admin/shows/sub_header'%>
+<h1> Companies </h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for company in @companies %>
+    <tr>
+      <td><%= company.name %></td>
+      <td><%= link_to "Show", admin_shows_trade_show_company_path(@trade_show, company) %></td>
+      <td><%= link_to "Edit", edit_admin_shows_trade_show_company_path(@trade_show, company) %></td>
+      <td><%= link_to "Destroy", admin_shows_trade_show_company_path(@trade_show, company), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Company", new_admin_shows_trade_show_company_path(@trade_show), :class => 'button' %></p>

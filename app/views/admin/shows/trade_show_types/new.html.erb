@@ -1,0 +1,8 @@
+<%= render :partial => '/admin/shows/sub_header'%>
+<h1> New Trade Show Type" </h1>
+
+<%= form_for(@trade_show_type, :url => admin_shows_trade_show_types_path(@trade_show_type)) do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>
+
+  <%= link_to 'Back to List', admin_shows_trade_show_types_path, :class => 'button' %>

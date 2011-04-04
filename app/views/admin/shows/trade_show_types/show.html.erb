@@ -1,0 +1,13 @@
+<%= render :partial => '/admin/shows/sub_header'%>
+<h1> Trade Show Type </h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @trade_show_type.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_shows_trade_show_type_path(@trade_show_type), :class => 'button' %> |
+  <%= link_to "Destroy", admin_shows_trade_show_type_path(@trade_show_type), :confirm => 'Are you sure?', :method => :delete, :class => 'button' %> |
+  <%= link_to "View All", admin_shows_trade_show_types_path, :class => 'button' %>
+</p>

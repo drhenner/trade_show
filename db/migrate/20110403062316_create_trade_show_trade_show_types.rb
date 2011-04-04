@@ -4,7 +4,6 @@ class CreateTradeShowTradeShowTypes < ActiveRecord::Migration
       t.integer :trade_show_id
       t.integer :trade_show_type_id
 
-      t.timestamps
     end
     add_index :trade_show_trade_show_types, :trade_show_id
     add_index :trade_show_trade_show_types, :trade_show_type_id

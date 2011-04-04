@@ -1,0 +1,20 @@
+<%= render :partial => '/admin/shows/sub_header'%>
+<% if @trade_show_type.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@trade_show_type.errors.count, "error") %> prohibited this trade_show_type from being saved:</h2>
+
+    <ul>
+    <% @trade_show_type.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>

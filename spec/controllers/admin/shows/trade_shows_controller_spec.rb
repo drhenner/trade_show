@@ -7,7 +7,6 @@ describe Admin::Shows::TradeShowsController do
     activate_authlogic
     @user = Factory(:admin_user)
     login_as(@user)
-    @ticket = Factory(:ticket)
   end
 
   it "index action should render index template" do

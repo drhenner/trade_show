@@ -3,7 +3,6 @@ class CreateTradeShowTypes < ActiveRecord::Migration
     create_table :trade_show_types do |t|
       t.string :name
 
-      t.timestamps
     end
   end
 

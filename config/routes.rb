@@ -120,7 +120,10 @@ Hadean::Application.routes.draw do # |map|
     end
 
     namespace :shows do
-      resources :trade_shows
+      resources :trade_shows do
+        resources :companies
+      end
+      resources :trade_show_types
     end
 
     namespace :rma do

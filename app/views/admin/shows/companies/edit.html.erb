@@ -1,0 +1,9 @@
+<%= render :partial => '/admin/shows/sub_header'%>
+<h1> Edit Company </h1>
+
+<%= form_for(@company, :url => admin_shows_trade_show_company_path(@trade_show, @company)) do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>
+
+  <%= link_to 'Show', admin_shows_trade_show_company_path(@trade_show, @company ), :class => 'button' %> |
+  <%= link_to 'View All', admin_shows_trade_show_companies_path, :class => 'button' %>

@@ -1,0 +1,7 @@
+<% content_for :header_sub_bar do -%>
+  <%= link_to 'Trade Shows', admin_shows_trade_shows_path %> |
+  <%= link_to 'Types', admin_shows_trade_show_types_path %>
+  <% if @trade_show && @trade_show.id %>
+    | <%= link_to 'Companies', admin_shows_trade_show_companies_path(@trade_show) %>
+  <% end %>
+<% end %>

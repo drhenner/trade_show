@@ -1,0 +1,8 @@
+<h1> Edit Trade Show Type </h1>
+
+<%= form_for(@trade_show_type, :url => admin_shows_trade_show_type_path(@trade_show_type)) do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>
+
+  <%= link_to 'Show', admin_shows_trade_show_type_path( @trade_show_type ), :class => 'button' %> |
+  <%= link_to 'View All', admin_shows_trade_show_types_path, :class => 'button' %>
