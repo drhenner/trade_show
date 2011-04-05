@@ -6,5 +6,8 @@ class Company < ActiveRecord::Base
                     :dependent  => :destroy
   has_many :owners
 
+  has_many :trade_show_companies
+  has_many :companies, :through => :trade_show_companies
+
   accepts_nested_attributes_for :images, :reject_if => lambda { |t| t['photo'].nil? }
 end

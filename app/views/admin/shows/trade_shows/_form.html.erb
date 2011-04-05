@@ -45,6 +45,17 @@
     <%= f.text_area :description %>
   </div>
 
+  <fieldset id="admin-company-names">
+    <legend>Companies</legend>
+    <div id="trade_show_companies">
+      <%= render  :partial    => "/admin/shows/trade_shows/company_form",
+                  :locals     => { :form => f } %>
+    </div>
+  </fieldset>
+
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

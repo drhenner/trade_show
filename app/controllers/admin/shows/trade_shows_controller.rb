@@ -50,5 +50,6 @@ class Admin::Shows::TradeShowsController < Admin::Shows::BaseController
 
   def form_info
     @cities = City.all.collect{|c| [c.name, c.id]}
+    @all_companies = Company.order('name ASC').all
   end
 end

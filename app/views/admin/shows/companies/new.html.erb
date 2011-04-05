@@ -1,5 +1,5 @@
 <%= render :partial => '/admin/shows/sub_header'%>
-<h1> New Company" </h1>
+<h1> New Company (<%= @trade_show.name %>) </h1>
 
 <%= form_for(@company, :url => admin_shows_trade_show_companies_path(@trade_show, @company)) do |f| %>
   <%= render :partial => 'form', :locals => {:f => f} %>
