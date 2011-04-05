@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110403062316) do
+ActiveRecord::Schema.define(:version => 20110405064721) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name",                                                           :null => false
@@ -99,8 +99,8 @@ ActiveRecord::Schema.define(:version => 20110403062316) do
   create_table "cities", :force => true do |t|
     t.string   "name",                                      :null => false
     t.integer  "state_id",                                  :null => false
-    t.decimal  "latitude",   :precision => 10, :scale => 0
-    t.decimal  "longitude",  :precision => 10, :scale => 0
+    t.decimal  "latitude",   :precision => 10, :scale => 6
+    t.decimal  "longitude",  :precision => 10, :scale => 6
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -136,6 +136,9 @@ ActiveRecord::Schema.define(:version => 20110403062316) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "city_id"
+    t.string   "website"
+    t.text     "full_markdown"
+    t.string   "email"
   end
 
   add_index "companies", ["city_id"], :name => "index_companies_on_city_id"
@@ -706,6 +709,7 @@ ActiveRecord::Schema.define(:version => 20110403062316) do
     t.text     "keywords"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active",            :default => true
   end
 
   add_index "trade_shows", ["city_id"], :name => "index_trade_shows_on_city_id"

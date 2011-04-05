@@ -5,4 +5,8 @@ Factory.define :company do |f|
   f.label "Just Do it!"
   f.brief_description "shoe company"
   f.full_description "We sell Tiger Woods stuff and much much more."
+
+  f.website         'http://www.ror-e.com'
+  f.full_markdown   'TExt'
+  f.email           'drhenner@rorecommerce.com'
 end
