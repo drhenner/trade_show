@@ -1,0 +1,11 @@
+<h1>Pick a Location</h1>
+
+<p>
+  <ul>
+    <% @cities.each do |city| %>
+      <li class='<%= cycle("first-column", "second-column", "third-column") -%>'>
+        <%= link_to city.name, welcome_path(:location => city.id) %>
+      </li>
+    <% end %>
+  </ul>
+</p>

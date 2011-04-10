@@ -1,0 +1,11 @@
+<h1>Pick a Trade Show</h1>
+
+<p>
+  <ul>
+    <% @trade_shows.each do |trade_show| %>
+      <li class='<%= cycle("first-column", "second-column", "third-column") -%>'>
+        <%= link_to trade_show.name, welcome_path(:location => trade_show.id) %>
+      </li>
+    <% end %>
+  </ul>
+</p>
