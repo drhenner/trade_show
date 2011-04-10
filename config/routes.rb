@@ -24,8 +24,8 @@ Hadean::Application.routes.draw do # |map|
   #resources :admins
   #devise_for :users
 
-
-  root :to => "welcome#index"
+  resource :welcome, :only => [:show]
+  root :to => "welcomes#show"
 
   namespace :customer do
     resources :registrations
