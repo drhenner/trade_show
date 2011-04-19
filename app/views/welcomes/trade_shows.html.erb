@@ -1,12 +1,26 @@
 <h1>Pick a Trade Show</h1>
 
 <p>
-  <ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Venue</th>
+        <th>Dates</th><th></th>
+      </tr>
+    </thead>
     <% @trade_shows.each do |trade_show| %>
-      <li class='<%= cycle("first-column", "second-column", "third-column") -%>'>
-        <%= link_to trade_show.name, welcome_path(:trade_show => trade_show.id) %>
-        (<%= trade_show.display_start_date %> to <%= trade_show.display_end_date %>)
-      </li>
+      <tr>
+        <td class='<%= cycle("odd", "even") -%>'>
+          <%= link_to trade_show.name, welcome_path(:trade_show => trade_show.id) %>
+        </td>
+        <td>
+          Venue
+        </td>
+        <td>
+          <%= trade_show.display_start_date %> - <%= trade_show.display_end_date %>
+        </td>
+      </tr>
     <% end %>
-  </ul>
+  </table>
 </p>

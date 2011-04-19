@@ -1,0 +1,13 @@
+<h1> Locations </h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for location in @locations %>
+    <tr>
+      <td><%= link_to location.name, location_path(location) %></td>
+    </tr>
+  <% end %>
+</table>
+

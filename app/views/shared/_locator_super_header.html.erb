@@ -1,0 +1,44 @@
+<div id="header_wrapper" class='bp'>
+  <div class="container logged-in" id="header">
+    <h1 id="logo">
+      <%= link_to image_tag( "logos/#{Image::MAIN_LOGO}.png", :alt => 'hadean image.'), root_path %>
+    </h1>
+    <ul id="menu-main">
+
+      <li class="" id="menu-main-cart">
+        <% if current_user %>
+          <%= link_to(myaccount_user_path, :id => 'my_infos_buttons') do %>
+              <strong> My Info </strong>
+          <% end %>
+        <% else %>
+          <%= link_to(loop_about_path, :id => 'abouts_buttons') do %>
+              <strong> About Us </strong>
+          <% end %>
+        <% end %>
+      </li>
+      <li class="" id="menu-main-philosophy">
+          <%= link_to(philosophy_path, :id => 'philosophy_buttons') do %>
+              <strong> Philosophy </strong>
+          <% end %>
+      </li>
+
+      <li class="" id="menu-main-location">
+          <%= link_to(locations_path, :id => 'locations_buttons') do %>
+              <strong> Location </strong>
+          <% end %>
+      </li>
+      <li class="" id="menu-main-user">
+        <div>
+          <% unless most_likely_user %>
+            <strong><%= link_to 'Login',  login_path %></strong> or
+            <span><%= link_to 'Sign up', signup_path %></span>
+          <% else %>
+            <strong>Hi <%= most_likely_user.first_name %></strong>
+            <span>(<%= link_to 'not you?', logout_path %>)</span>
+          <% end %>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>

@@ -9,7 +9,6 @@ class Product < ActiveRecord::Base
     text    :name, :default_boost => 2
     text      :product_keywords#, :multiple => true
     text      :description
-    time      :deleted_at
   end
   #Sunspot.setup(Rehab) do
   #  text :addiction

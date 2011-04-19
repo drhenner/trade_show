@@ -1,6 +1,6 @@
 class WelcomesController < ApplicationController
 
-  layout 'welcome'
+  layout 'locator'
 
   def show
     cookies[:trade_show]  = params[:trade_show] if params[:trade_show].present?
