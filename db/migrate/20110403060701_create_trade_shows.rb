@@ -7,6 +7,7 @@ class CreateTradeShows < ActiveRecord::Migration
       t.date    :end_date
       t.string  :short_description
       t.text    :description
+      t.text    :description_markup
       t.text    :keywords
       t.boolean :active, :default => true
 

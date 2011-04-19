@@ -8,11 +8,12 @@ gem 'nested_set',     '~> 1.6.3'
 gem 'attr_encrypted'
 
 gem 'authlogic',    "2.1.6", :git => 'git://github.com/bborn/authlogic.git'
+gem 'bluecloth',     '~> 2.1.0'
 gem 'cancan',       '~> 1.4.1'
 gem 'compass',      "~> 0.10.6"
 
 #gem 'curb' # Faster HTTP
-#gem 'dalli',       '~> 1.0.0'
+gem 'dalli',       '~> 1.0.2'
 
 gem 'fancy-buttons'
 gem "friendly_id",  "~> 3.0"
@@ -39,10 +40,6 @@ gem 'state_machine',      '~> 0.9.4'
 gem 'will_paginate',      '~> 3.0.pre2'
 #gem 'validation_reflection',      :branch => "rails-3"
 gem 'yajl-ruby' # Faster JSON
-
-#group :production do
-gem 'dalli', '~> 1.0.2'
-#end
 
 ## ADD stuff here if you need them
 platforms :ruby_19 do

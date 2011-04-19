@@ -4,6 +4,7 @@
 en:
   company:                'Virtual Kiosk'
   hello:                  'Hello'
+  logo_pic:               'trade_show_logo_sm.jpg'
   out_of_stock_notice:    'Sorry this item is out of stock.'
   item_saved_for_later:   'The item will be saved for later.'
   reset_password_title:   'Reset Password'
