@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 ## Bundle rails:
-gem 'rails', '~> 3.0.5'
+gem 'rails', '~> 3.0.7'
 
 gem "activemerchant", '~> 1.7.2'#, :lib => 'active_merchant'
 gem 'nested_set',     '~> 1.6.3'
@@ -36,10 +36,10 @@ gem 'rmagick',            :require => 'RMagick'
 #gem 'sunspot'
 gem 'sunspot_rails',      '~> 1.2.rc4'
 gem 'ssl_requirement'
-gem 'state_machine',      '~> 0.9.4'
+gem 'state_machine',      '~> 0.10.3'
 gem 'will_paginate',      '~> 3.0.pre2'
 #gem 'validation_reflection',      :branch => "rails-3"
-gem 'yajl-ruby' # Faster JSON
+gem 'yajl-ruby',          '~> 0.8.2' # Faster JSON
 
 ## ADD stuff here if you need them
 platforms :ruby_19 do
