@@ -8,6 +8,8 @@ class TradeShow < ActiveRecord::Base
   has_many   :trade_show_types, :through => :trade_show_trade_show_types
 
   serialize :keywords, Array
+  before_save :create_content
+
   validates  :name,               :presence => true,
                                   :length   => { :minimum => 2, :maximum => 160 }
   validates  :city_id,            :presence => true
@@ -47,4 +49,8 @@ class TradeShow < ActiveRecord::Base
     self.keywords ? self.keywords.join(', ') : ''
   end
 
+private
+  def create_content
+    self.description = BlueCloth.new(self.description_markup).to_html unless self.description_markup.blank?
+  end
 end

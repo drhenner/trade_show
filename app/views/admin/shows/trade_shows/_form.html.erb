@@ -11,11 +11,6 @@
 <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
     <%= f.label :city_id %><br />
     <%= f.select :city_id, @cities %>
   </div>
@@ -40,11 +35,6 @@
     <%= f.text_field :set_keywords %>
   </div>
 
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-
   <fieldset id="admin-company-names">
     <legend>Companies</legend>
     <div id="trade_show_companies">
@@ -52,9 +42,6 @@
                   :locals     => { :form => f } %>
     </div>
   </fieldset>
-
-
-
 
   <div class="actions">
     <%= f.submit %>

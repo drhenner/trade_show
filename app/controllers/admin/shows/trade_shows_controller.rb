@@ -10,6 +10,7 @@ class Admin::Shows::TradeShowsController < Admin::Shows::BaseController
   def new
     form_info
     @trade_show = TradeShow.new
+    render :layout => 'admin_markup'
   end
 
   def create
@@ -19,13 +20,14 @@ class Admin::Shows::TradeShowsController < Admin::Shows::BaseController
       redirect_to admin_shows_trade_show_url(@trade_show)
     else
       form_info
-      render :action => 'new'
+      render :action => 'new', :layout => 'admin_markup'
     end
   end
 
   def edit
     form_info
     @trade_show = TradeShow.find(params[:id])
+    render :layout => 'admin_markup'
   end
 
   def update
@@ -35,7 +37,7 @@ class Admin::Shows::TradeShowsController < Admin::Shows::BaseController
       redirect_to admin_shows_trade_show_url(@trade_show)
     else
       form_info
-      render :action => 'edit'
+      render :action => 'edit', :layout => 'admin_markup'
     end
   end
 

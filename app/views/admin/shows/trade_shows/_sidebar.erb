@@ -1,0 +1,24 @@
+
+    <div id="title-container">
+      <%= f.text_field :name %>
+      <p>/1234-name</p>
+    </div>
+
+    <div id="wmd-container">
+      <div id="wmd-button-bar"></div>
+      <%= f.text_area :description_markup, :id => "wmd-input", :cols => "92", :rows => "15" %>
+    </div><!--wmd-container-->
+
+    <ul class="options form-submit">
+      <li>
+        <%#= f.submit "Share your post with the world",
+                      :name     => "save_post",
+                      :confirm  => "Are you sure you want to share this post with the world?" %>
+      </li>
+      <li class="right">
+        <%#= f.submit "Save as draft",
+                      :id     => "draft_submit",
+                      :name   => "save_draft" %>
+      </li>
+    </ul>
+    <%= render :partial => 'form', :locals => {:f => f} %>

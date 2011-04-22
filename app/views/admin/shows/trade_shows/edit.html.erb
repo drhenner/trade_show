@@ -1,6 +1,9 @@
 <%= render :partial => '/admin/shows/sub_header'%>
 <h1> Edit Trade Show </h1>
 
+<%= render :partial => 'preview' %>
+
+
 <%= form_for(@trade_show, :url => admin_shows_trade_show_path(@trade_show)) do |f| %>
   <%= render :partial => 'form', :locals => {:f => f} %>
 <% end %>
