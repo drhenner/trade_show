@@ -19,7 +19,7 @@ gem 'fancy-buttons'
 gem "friendly_id",  "~> 3.0"
 gem 'formtastic',   "~> 1.1.0"#  :git => 'git://github.com/justinfrench/formtastic.git', :branch => "rails3"
 gem 'haml',         ">= 3.0.13"#, ">= 3.0.4"#, "2.2.21"#,
-gem "jquery-rails"
+gem "jquery-rails",  '~> 0.2.7'
 
 
 gem 'nokogiri',         '~> 1.4.4'
