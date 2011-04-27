@@ -16,5 +16,16 @@ loop_footer_tabs = {
         <li> <%= link_to_unless_current tab_name, tab_path %> </li> <%= '|' unless tab_name == 'Customer Service' %>
       <% end %>
     </ul>
+
+    <% if current_user && current_user.allowed_in_admin? %>
+      <ul id='main-admin-tabs'>
+        <% if current_user.admin? || current_user.role?(:customer_service) %>
+          <li> <%= link_to 'Admin' , admin_config_overviews_path %> </li>
+        <% end %>
+        <% if current_user.admin? || current_user.seller_admin? %>
+          <li> <%= link_to 'Seller Info' , seller_admin_overview_path %> </li>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
 </div>

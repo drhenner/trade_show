@@ -3,6 +3,9 @@
   font-variant: small-caps;
   font-weight:bold;
   font-size:106%;
+  ul {
+    display:inline;
+  }
 
   border-bottom: 1px solid #ECECEC;
   background: url("../../images/header/bg-header-wrap.png") repeat-x scroll center bottom #FFFFFF;

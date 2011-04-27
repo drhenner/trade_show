@@ -226,26 +226,30 @@ a:visited {
   text-align: left;
   /*margin-top:50px;*/
 }
-/* line 13, ../../app/stylesheets/_main_footer.scss */
+/* line 6, ../../app/stylesheets/_main_footer.scss */
+#footer_wrapper ul {
+  display: inline;
+}
+/* line 16, ../../app/stylesheets/_main_footer.scss */
 #footer_wrapper li {
   display: inline;
   list-style: none;
   color: #ADA663;
   padding: 3px;
 }
-/* line 18, ../../app/stylesheets/_main_footer.scss */
+/* line 21, ../../app/stylesheets/_main_footer.scss */
 #footer_wrapper li a {
   color: #828282;
 }
-/* line 21, ../../app/stylesheets/_main_footer.scss */
+/* line 24, ../../app/stylesheets/_main_footer.scss */
 #footer_wrapper li a:hover {
   color: #ADA663;
 }
-/* line 24, ../../app/stylesheets/_main_footer.scss */
+/* line 27, ../../app/stylesheets/_main_footer.scss */
 #footer_wrapper li .selected {
   color: #ADA663 !important;
 }
-/* line 28, ../../app/stylesheets/_main_footer.scss */
+/* line 31, ../../app/stylesheets/_main_footer.scss */
 #footer_wrapper li:hover {
   color: #ADA663;
 }
