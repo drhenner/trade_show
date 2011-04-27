@@ -5,4 +5,5 @@ Factory.define :owner do |f|
   f.name "MyString"
   f.brief_description "MyText"
   f.full_description "MyText"
+  f.description_markup 'My markup'
 end

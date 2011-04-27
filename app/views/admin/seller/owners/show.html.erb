@@ -7,6 +7,21 @@
 </p>
 
 <p>
+  <strong>company name:</strong>
+  <%= @owner.company_name %>
+</p>
+
+<p>
+  <strong>brief description:</strong>
+  <%= @owner.brief_description %>
+</p>
+
+<p>
+  <strong>description:</strong>
+  <%= @owner.full_description %>
+</p>
+
+<p>
   <%= link_to "Edit", edit_admin_seller_owner_path(@owner), :class => 'button' %> |
   <%= link_to 'Edit Images', edit_admin_seller_images_owner_path(@owner), :class => 'button'%> |
   <%= link_to "View All", admin_seller_owners_path, :class => 'button' %>

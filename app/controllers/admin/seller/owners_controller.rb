@@ -10,6 +10,7 @@ class Admin::Seller::OwnersController < Admin::Seller::BaseController
   def new
     form_info
     @owner = Owner.new
+    render :layout => 'admin_markup'
   end
 
   def create
@@ -19,13 +20,14 @@ class Admin::Seller::OwnersController < Admin::Seller::BaseController
       redirect_to admin_seller_owner_url(@owner)
     else
       form_info
-      render :action => 'new'
+      render :action => 'new', :layout => 'admin_markup'
     end
   end
 
   def edit
     form_info
     @owner = Owner.find(params[:id])
+    render :layout => 'admin_markup'
   end
 
   def update
@@ -35,7 +37,7 @@ class Admin::Seller::OwnersController < Admin::Seller::BaseController
       redirect_to admin_seller_owner_url(@owner)
     else
       form_info
-      render :action => 'edit'
+      render :action => 'edit', :layout => 'admin_markup'
     end
   end
 

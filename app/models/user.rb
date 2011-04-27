@@ -185,6 +185,10 @@ class User < ActiveRecord::Base
     role?(:super_administrator)
   end
 
+  def allowed_in_admin?
+    admin? || role?(:customer_service) || seller_admin?
+  end
+
   # returns true or false if the user is an seller_admin or not
   #
   # @param [none]

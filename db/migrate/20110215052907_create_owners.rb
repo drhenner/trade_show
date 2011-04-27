@@ -5,6 +5,7 @@ class CreateOwners < ActiveRecord::Migration
       t.string  :name
       t.text    :brief_description
       t.text    :full_description
+      t.text    :description_markup
 
       t.timestamps
     end
