@@ -26,20 +26,22 @@
 
 </head>
 <body >
-  <div class="bp">
-    <%= raw "<p class='flash_notice'> #{notice}</p>"  if notice %>
-    <%= raw "<p class='flash_error'>#{alert}</p>"     if alert %>
-  </div>
+  <div class="main_wrapper">
+    <div class="bp">
+      <%= raw "<p class='flash_notice'> #{notice}</p>"  if notice %>
+      <%= raw "<p class='flash_error'>#{alert}</p>"     if alert %>
+    </div>
 
-
-
-  <%= render 'shared/locator_header' %>
+    <%= render 'shared/locator_header' %>
 
     <div id='content_wrapper' class='container'>
       <%= yield %>
     </div>
-
-  <%= yield :bottom %>
+  </div>
+    <div id='foot'>
+      <%= render 'shared/main_footer' %>
+    </div>
+    <%= yield :bottom %>
 
   <script>
   jQuery(window).ready(
