@@ -1,3 +1,19 @@
 <h1> <%= @trade_show.name %> </h1>
 
 <%=raw @trade_show.description %>
+
+<% content_for :sidebar do -%>
+  <label>Trade Show Info</label>
+  <ul>
+    <li><%= link_to 'Virtual Trade Show' %></li>
+  </ul>
+
+
+  <label>Booths</label>
+  <ul>
+    <% @trade_show.companies.each do |company| %>
+        <li><%= company.name %></li>
+    <% end %>
+  </ul>
+
+<% end %>

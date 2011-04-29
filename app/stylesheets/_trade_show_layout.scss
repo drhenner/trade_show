@@ -1,0 +1,16 @@
+#trade-show-wrapper {
+  @include span(16)
+}
+
+#trade-show-side-wrapper {
+  @include span(8);
+  height: 90%;
+
+  background-color: #F3F3F3;
+  @include rounded(10px);
+
+  .inside-wrapper {
+    margin:6px;
+  }
+
+}
