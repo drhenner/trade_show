@@ -77,7 +77,7 @@ group :test do
   gem "autotest-rails-pure"
 
   if RUBY_PLATFORM =~ /darwin/
-    gem "autotest-fsevent"
+   # gem "autotest-fsevent"
   end
   gem "autotest-growl"
   #gem "redgreen"
