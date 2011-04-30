@@ -30,12 +30,22 @@ class DeviseCreateUsers < ActiveRecord::Migration
     end
 
     #add_index :users, :first_name
-    execute('CREATE INDEX users_first_name_ten ON users (first_name(8));')
-    execute('CREATE INDEX users_last_name_ten ON users (encrypted_last_name(8));')
-    execute('CREATE INDEX users_email_ten ON users (email(20));')
-    execute('CREATE INDEX users_perishable_token_ten ON users (perishable_token(10));')
-    execute('CREATE INDEX users_persistence_token_ten ON users (persistence_token(10));')
-    execute('CREATE INDEX users_access_token_ten ON users (access_token(10));')
+    if nil
+      execute('CREATE INDEX users_first_name_ten ON users (first_name(8));')
+      execute('CREATE INDEX users_last_name_ten ON users (encrypted_last_name(8));')
+      execute('CREATE INDEX users_email_ten ON users (email(20));')
+      execute('CREATE INDEX users_perishable_token_ten ON users (perishable_token(10));')
+      execute('CREATE INDEX users_persistence_token_ten ON users (persistence_token(10));')
+      execute('CREATE INDEX users_access_token_ten ON users (access_token(10));')
+    else
+      add_index :users, :first_name
+      add_index :users, :encrypted_last_name
+      add_index :users, :email
+      add_index :users, :perishable_token
+      add_index :users, :persistence_token
+      add_index :users, :access_token
+    end
+
     #add_index :users, :last_name
     #add_index :users, :email,               :unique => true
     #add_index :users, :perishable_token,    :unique => true

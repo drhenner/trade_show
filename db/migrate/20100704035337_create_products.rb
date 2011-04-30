@@ -18,14 +18,20 @@ class CreateProducts < ActiveRecord::Migration
       #t.integer           :count_on_hand
       t.timestamps
     end
-      #add_index :products, :name
-      execute('CREATE INDEX products_name_ten ON products (name(9));')
+      #
+      if nil
+        execute('CREATE INDEX products_name_ten ON products (name(9));')
+        execute('CREATE INDEX products_permalink_ten ON products (permalink(15));')
+      else
+        add_index :products, :name
+        add_index :products, :permalink#,   :unique => true
+      end
       add_index :products, :tax_category_id
       add_index :products, :product_type_id
       add_index :products, :shipping_category_id
       add_index :products, :prototype_id
-      #add_index :products, :permalink,   :unique => true
-      execute('CREATE INDEX products_permalink_ten ON products (permalink(15));')
+      #
+
   end
 
   def self.down

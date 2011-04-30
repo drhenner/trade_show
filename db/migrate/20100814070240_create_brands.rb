@@ -3,7 +3,11 @@ class CreateBrands < ActiveRecord::Migration
     create_table :brands do |t|
       t.string      :name
     end
-    execute('CREATE INDEX brands_name_ten ON brands (name(9));')
+    if nil
+      execute('CREATE INDEX brands_name_ten ON brands (name(9));')
+    else
+      add_index :brands, :name
+    end
   end
 
   def self.down

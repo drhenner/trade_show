@@ -13,9 +13,13 @@ class CreateVariants < ActiveRecord::Migration
       t.integer         :count_pending_from_supplier, :default => 0, :null => false
       t.timestamps
     end
-    #add_index :variants, :sku
+    #
     add_index :variants, :product_id
-    execute('CREATE INDEX variants_sku_ten ON variants (sku(10));')
+    if nil
+      execute('CREATE INDEX variants_sku_ten ON variants (sku(10));')
+    else
+      add_index :variants, :sku
+    end
     execute "alter table variants add constraint fk_variants_products foreign key (product_id) references products(id)" if SETTINGS[:use_foreign_keys]
   end
 

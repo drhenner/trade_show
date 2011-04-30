@@ -18,10 +18,15 @@ class CreateOrders < ActiveRecord::Migration
       t.timestamps
     end
 
-    #add_index :orders, :number
-    execute('CREATE UNIQUE INDEX orders_number_ten ON orders (number(10));')
-    execute('CREATE INDEX orders_email_ten ON orders (email(10));')
-    #add_index :orders, :email
+    #
+    if nil
+      execute('CREATE UNIQUE INDEX orders_number_ten ON orders (number(10));')
+      execute('CREATE INDEX orders_email_ten ON orders (email(10));')
+    else
+      add_index :orders, :number
+      add_index :orders, :email
+    end
+    #
     add_index :orders, :user_id
     add_index :orders, :bill_address_id
     add_index :orders, :ship_address_id

@@ -8,8 +8,12 @@ class CreateStates < ActiveRecord::Migration
       t.integer :country_id,                :null => false
       t.integer :shipping_zone_id,          :null => false
     end
-    #add_index :states, :name
-    execute('CREATE INDEX states_name_ten ON states (name(8));')
+    #
+    if nil
+      execute('CREATE INDEX states_name_ten ON states (name(8));')
+    else
+      add_index :states, :name
+    end
     add_index :states, :country_id
     add_index :states, :abbreviation
   end

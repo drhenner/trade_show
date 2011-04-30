@@ -8,7 +8,11 @@ class CreateCompanies < ActiveRecord::Migration
 
       t.timestamps
     end
-    execute('CREATE INDEX companies_name_ten ON companies (name(9));')
+    if nil
+      execute('CREATE INDEX companies_name_ten ON companies (name(9));')
+    else
+      add_index :companies, :name
+    end
   end
 
   def self.down

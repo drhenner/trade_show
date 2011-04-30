@@ -13,7 +13,12 @@ class CreateUserReferrals < ActiveRecord::Migration
     add_index :user_referrals, :user_id
     add_index :user_referrals, :referral_id
     add_index :user_referrals, :referral_program_id
-    execute('CREATE INDEX user_referrals_referral_email_ten ON user_referrals (referral_email(9));')
+    if nil
+      execute('CREATE INDEX user_referrals_referral_email_ten ON user_referrals (referral_email(9));')
+    else
+      add_index :user_referrals, :referral_email
+    end
+
   end
 
   def self.down

@@ -12,7 +12,11 @@ class CreateTickets < ActiveRecord::Migration
 
       t.timestamps
     end
-    execute('CREATE INDEX tickets_subject_ten ON tickets (subject(10));')
+    if nil
+      execute('CREATE INDEX tickets_subject_ten ON tickets (subject(10));')
+    else
+      add_index :tickets, :subject
+    end
     add_index :tickets, :user_id
     add_index :tickets, :assigned_to_id
     add_index :tickets, :brand_id
