@@ -11,6 +11,7 @@ Hadean::Application.routes.draw do # |map|
   resources :brands,      :only => [:index ]
   resources :designers,   :only => [:index, :show ]
   resources :booths,      :only => [ :show ]
+  resource  :pricing,     :only => [ :show ]
 
   resources :colors,    :only => [:index ]
   resources :products,  :only => [:index, :show, :create ]

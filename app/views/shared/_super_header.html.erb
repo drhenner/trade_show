@@ -5,7 +5,7 @@
     </h1>
     <ul id="menu-main">
       <li id="menu-main-discover">
-        <a href="/"> <strong> Flash Sale </strong> </a>
+        <a href="/"> <strong> Trade Show </strong> </a>
       </li>
 
       <li class="" id="menu-main-cart">
@@ -19,14 +19,15 @@
           <% end %>
         <% end %>
       </li>
+      <%#
       <li class="" id="menu-main-philosophy">
-          <%= link_to(shopping_cart_items_path, :id => 'cart_items_buttons') do %>
+          <%#= link_to(shopping_cart_items_path, :id => 'cart_items_buttons') do % >
               <strong> Cart </strong>
-          <% end %>
+          <%# end % >
       </li>
-
+      %>
       <li class="" id="menu-main-price">
-          <%= link_to(wish_items_path, :id => 'wish_items_button') do %>
+          <%= link_to(pricing_path, :id => 'wish_items_button') do %>
               <strong> Pricing </strong>
           <% end %>
       </li>
