@@ -1,7 +1,7 @@
 
 <% @all_companies.each do |company| %>
     <div class="company_form left span-9 last">
-      <% checked = @trade_show.name && @trade_show.trade_show_companies.map(&:company_id).include?(company.id)%>
+      <% checked = @trade_show.name && @trade_show.booths.map(&:company_id).include?(company.id)%>
       <%= check_box_tag "trade_show[company_ids][]", company.id, checked %>
       <%= company.name %>
     </div>

@@ -1,8 +1,8 @@
 class TradeShow < ActiveRecord::Base
   belongs_to :city
 
-  has_many   :trade_show_companies
-  has_many   :companies, :through => :trade_show_companies
+  has_many   :booths
+  has_many   :companies, :through => :booths
 
   has_many   :trade_show_trade_show_types
   has_many   :trade_show_types, :through => :trade_show_trade_show_types
@@ -17,7 +17,7 @@ class TradeShow < ActiveRecord::Base
   validates  :end_date,           :presence => true
   validates  :short_description,  :presence => true
 
-  accepts_nested_attributes_for :trade_show_trade_show_types, :trade_show_companies
+  accepts_nested_attributes_for :trade_show_trade_show_types, :booths
 
 
   def display_start_date(format = :us_date)

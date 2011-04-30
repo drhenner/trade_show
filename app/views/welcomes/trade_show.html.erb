@@ -11,8 +11,8 @@
 
   <label>Booths</label>
   <ul>
-    <% @trade_show.companies.each do |company| %>
-        <li><%= company.name %></li>
+    <% @trade_show.booths.each do |booth| %>
+        <li><%= link_to booth.name, booth_path(booth) %></li>
     <% end %>
   </ul>
 

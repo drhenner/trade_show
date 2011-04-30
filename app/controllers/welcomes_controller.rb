@@ -7,7 +7,7 @@ class WelcomesController < ApplicationController
     cookies[:location]    = params[:location]   if params[:location].present?
 
     if !params[:bipass_trade_show] && cookies[:trade_show] # Display the trade show
-      @trade_show = TradeShow.find(cookies[:trade_show] )
+      @trade_show = TradeShow.includes({ :booths => :company }).find(cookies[:trade_show] )
       render :template => '/welcomes/trade_show', :layout => "trade_show"
     elsif !params[:bipass_location] && cookies[:location] # Display all trade shows at this location
       @city         = City.find(cookies[:location])
