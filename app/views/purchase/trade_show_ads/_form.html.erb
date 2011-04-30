@@ -1,0 +1,33 @@
+
+<% if @booth.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@booth.errors.count, "error") %> prohibited this shopping_address from being saved:</h2>
+
+    <ul>
+    <% @booth.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<div class="field column">
+    <ol id='add'>
+        <li>
+          <div class="field column">
+            <%= f.label :company_id, 'Company *' %>
+            <%= f.select :company_id, @companies, { :include_blank => true, :class => 'span-3'} %>
+          </div>
+
+          <div class="field column">
+            <%= f.label :trade_show_id, 'Trade Show *' %>
+            <%= f.select :trade_show_id, @trade_shows, { :include_blank => true, :class => 'span-3'} %>
+          </div>
+        </li>
+
+        <li>
+          <div class="actions column prepend-1">
+            <%= f.submit %>
+          </div>
+        </li>
+  </ol>
+</div>

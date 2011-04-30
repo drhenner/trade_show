@@ -49,6 +49,10 @@ class TradeShow < ActiveRecord::Base
     self.keywords ? self.keywords.join(', ') : ''
   end
 
+  def self.future
+    where(['start_date >= ?', Time.zone.now])
+  end
+
 private
   def create_content
     self.description = BlueCloth.new(self.description_markup).to_html unless self.description_markup.blank?

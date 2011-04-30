@@ -36,6 +36,10 @@ Hadean::Application.routes.draw do # |map|
     resource  :activation, :only => [:show]
   end
 
+  namespace :purchase do
+    resource :trade_show_ad
+  end
+
   namespace :loop do
     resource  :about, :only => [:show]
     resources :terms, :only => [:index]
