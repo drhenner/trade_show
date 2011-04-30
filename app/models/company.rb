@@ -1,5 +1,5 @@
 class Company < ActiveRecord::Base
-  #has_friendly_id :permalink, :use_slug => false
+  has_friendly_id :permalink, :use_slug => false
 
   has_many :sellers
   has_many :brands
@@ -13,7 +13,9 @@ class Company < ActiveRecord::Base
 
   before_validation :sanitize_data
 
-  validates :permalink,         :presence => true, :length => { :maximum => 100, :minimum => 2 }
+  validates :permalink,         :presence   => true,
+                                :length     => { :maximum => 100, :minimum => 2 },
+                                :uniqueness => true
   validates :name,              :presence => true, :length => { :maximum => 100, :minimum => 2 }
   validates :website,           :presence => true, :length => { :maximum => 100, :minimum => 5 }
   validates :email,             :presence => true, :length => { :maximum => 120, :minimum => 6 }
@@ -36,10 +38,5 @@ class Company < ActiveRecord::Base
     self.website    = self.website.strip              unless website.nil?
     self.label      = self.label.strip                unless label.nil?
     self.permalink      = self.permalink.strip        unless permalink.nil?
-
-    ## CHANGE THIS IF YOU HAVE DIFFERENT ACCOUNT TYPES
-    unless account_id
-      self.account = Account.first
-    end
   end
 end

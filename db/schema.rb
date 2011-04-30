@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110405064721) do
+ActiveRecord::Schema.define(:version => 20110430063546) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name",                                                           :null => false
@@ -63,6 +63,13 @@ ActiveRecord::Schema.define(:version => 20110405064721) do
 
   add_index "batches", ["batchable_id"], :name => "index_batches_on_batchable_id"
   add_index "batches", ["batchable_type"], :name => "index_batches_on_batchable_type"
+
+  create_table "booths", :force => true do |t|
+    t.integer  "company_id"
+    t.integer  "trade_show_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "brands", :force => true do |t|
     t.string  "name"
@@ -139,6 +146,7 @@ ActiveRecord::Schema.define(:version => 20110405064721) do
     t.string   "website"
     t.text     "full_markdown"
     t.string   "email"
+    t.string   "permalink"
   end
 
   add_index "companies", ["city_id"], :name => "index_companies_on_city_id"
@@ -312,6 +320,7 @@ ActiveRecord::Schema.define(:version => 20110405064721) do
     t.text     "full_description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description_markup"
   end
 
   add_index "owners", ["company_id"], :name => "index_owners_on_company_id"
@@ -679,13 +688,6 @@ ActiveRecord::Schema.define(:version => 20110405064721) do
   add_index "tickets", ["subject"], :name => "tickets_subject_ten", :length => {"subject"=>10}
   add_index "tickets", ["user_id"], :name => "index_tickets_on_user_id"
 
-  create_table "trade_show_companies", :force => true do |t|
-    t.integer  "company_id"
-    t.integer  "trade_show_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "trade_show_trade_show_types", :force => true do |t|
     t.integer  "trade_show_id"
     t.integer  "trade_show_type_id"
@@ -709,7 +711,8 @@ ActiveRecord::Schema.define(:version => 20110405064721) do
     t.text     "keywords"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "active",            :default => true
+    t.boolean  "active",             :default => true
+    t.text     "description_markup"
   end
 
   add_index "trade_shows", ["city_id"], :name => "index_trade_shows_on_city_id"
