@@ -2,7 +2,10 @@
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development:
   adapter: mysql2
+  encoding: utf8
   database: trade_show_development
+  username: root
+  password:
   pool: 5
   timeout: 5000
 
@@ -11,12 +14,18 @@ development:
 # Do not set this db to the same as development or production.
 test:
   adapter: mysql2
+  encoding: utf8
   database: trade_show_test
+  username: root
+  password:
   pool: 5
   timeout: 5000
 
 production:
   adapter: mysql2
+  encoding: utf8
   database: trade_show
+  username: root
+  password:
   pool: 5
   timeout: 5000
