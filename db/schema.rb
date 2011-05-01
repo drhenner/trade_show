@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110430063546) do
+ActiveRecord::Schema.define(:version => 20110501215017) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name",                                                           :null => false
@@ -64,11 +64,21 @@ ActiveRecord::Schema.define(:version => 20110430063546) do
   add_index "batches", ["batchable_id"], :name => "index_batches_on_batchable_id"
   add_index "batches", ["batchable_type"], :name => "index_batches_on_batchable_type"
 
+  create_table "booth_trade_show_maps", :force => true do |t|
+    t.integer  "trade_show_map_id"
+    t.integer  "booth_id"
+    t.integer  "x_location"
+    t.integer  "y_location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "booths", :force => true do |t|
     t.integer  "company_id"
     t.integer  "trade_show_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "confirmed",     :default => false
   end
 
   create_table "brands", :force => true do |t|
@@ -687,6 +697,13 @@ ActiveRecord::Schema.define(:version => 20110430063546) do
   add_index "tickets", ["brand_id"], :name => "index_tickets_on_brand_id"
   add_index "tickets", ["subject"], :name => "tickets_subject_ten", :length => {"subject"=>10}
   add_index "tickets", ["user_id"], :name => "index_tickets_on_user_id"
+
+  create_table "trade_show_maps", :force => true do |t|
+    t.integer  "trade_show_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "trade_show_trade_show_types", :force => true do |t|
     t.integer  "trade_show_id"

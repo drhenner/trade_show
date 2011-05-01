@@ -22,7 +22,11 @@ class Purchase::TradeShowAdsController < ApplicationController
   private
 
   def form_info
-    @companies    = Company.all.map{|c| [c.name, c.id]}
+    if current_user.admin?
+      @companies    = Company.all.map{|c| [c.name, c.id]}
+    else
+      @companies    =  [current_user.company.name, current_user.company.id]}
+    end
     @trade_shows  = TradeShow.future.map{|ts| [ts.name, ts.id]}
   end
 end
