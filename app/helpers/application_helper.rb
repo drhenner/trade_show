@@ -12,10 +12,6 @@ EXAMPLE USAGE!!
   <%= new_child_fields_template(form, :properties, :partial => '/admin/merchandise/add_property')%>
 =end
 
-  def site_name
-    I18n.t(:company)
-  end
-
   def remove_child_link(name, f)
     f.hidden_field(:_destroy) + link_to(name, "javascript:void(0)", :class => "remove_child")
   end

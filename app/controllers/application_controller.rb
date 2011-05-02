@@ -11,7 +11,8 @@ class ApplicationController < ActionController::Base
                 :search_product,
                 :product_types,
                 :left_tabs,
-                :tab_path
+                :tab_path,
+                :site_name
 
   before_filter :secure_session
   before_filter :redirect_to_coming_soon
@@ -40,6 +41,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def site_name
+    I18n.t(:company)
+  end
 
   # By default the left tabs have nothing, This method is over-written in the main controller
   def left_tabs
