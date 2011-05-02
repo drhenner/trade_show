@@ -1,2 +1,0 @@
-module SellerAdmin::OverviewsHelper
-end
