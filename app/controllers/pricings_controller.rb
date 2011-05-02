@@ -1,6 +1,6 @@
 class PricingsController < ApplicationController
   def show
-    #@pricing = Pricing.find(params[:id])
+    @pricing = PurchasePlan.active
   end
 
   private

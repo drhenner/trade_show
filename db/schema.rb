@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110501215017) do
+ActiveRecord::Schema.define(:version => 20110502054644) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name",                                                           :null => false
@@ -63,6 +63,11 @@ ActiveRecord::Schema.define(:version => 20110501215017) do
 
   add_index "batches", ["batchable_id"], :name => "index_batches_on_batchable_id"
   add_index "batches", ["batchable_type"], :name => "index_batches_on_batchable_type"
+
+  create_table "booth_features", :force => true do |t|
+    t.integer "booth_id",   :null => false
+    t.integer "feature_id", :null => false
+  end
 
   create_table "booth_trade_show_maps", :force => true do |t|
     t.integer  "trade_show_map_id"
@@ -207,6 +212,16 @@ ActiveRecord::Schema.define(:version => 20110501215017) do
 
   add_index "featured_items", ["product_id"], :name => "index_featured_items_on_product_id"
   add_index "featured_items", ["starts_at"], :name => "index_featured_items_on_starts_at"
+
+  create_table "features", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.decimal  "price",       :precision => 10, :scale => 0
+    t.date     "start_date"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "feedbacks", :force => true do |t|
     t.integer  "user_id"
@@ -497,6 +512,24 @@ ActiveRecord::Schema.define(:version => 20110501215017) do
   add_index "purchase_orders", ["invoice_number"], :name => "purchase_orders_invoice_number_ten", :length => {"invoice_number"=>9}
   add_index "purchase_orders", ["supplier_id"], :name => "index_purchase_orders_on_supplier_id"
   add_index "purchase_orders", ["tracking_number"], :name => "purchase_orders_tracking_number_ten", :length => {"tracking_number"=>9}
+
+  create_table "purchase_plan_features", :force => true do |t|
+    t.integer  "purchase_plan_id"
+    t.integer  "feature_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "purchase_plans", :force => true do |t|
+    t.string   "name"
+    t.decimal  "price",       :precision => 8, :scale => 2
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "description"
+    t.boolean  "active",                                    :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "referral_programs", :force => true do |t|
     t.string   "name",                                                       :null => false

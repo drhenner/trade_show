@@ -93,10 +93,20 @@ end
                     :password_confirmation  => 'lloopp678')
 
     uu.save
-    uuu = User.create(  :first_name => 'Loop de Luxe',
+    uuu = User.create(  :first_name => 'Kiosk',
                         :last_name  => 'System',
                         :email        => 'anonymous@user.com',
                         :password               => 'lloopp678',
                         :password_confirmation  => 'lloopp678')
   end
 
+
+PurchasePlan::PURCHASE_PLANS_HASH.each do |plan|
+  purchase_plan = PurchasePlan.find_by_name(plan[:name])
+  PurchasePlan.create( plan.merge({ :start_date => Time.zone.now }) ) unless purchase_plan
+end
+
+Feature::FEATURES_HASH.each do |feature|
+  this_feature = Feature.find_by_name(feature[:name])
+  Feature.create( feature.merge({ :start_date => Time.zone.now }) ) unless this_feature
+end
