@@ -110,6 +110,10 @@ Hadean::Application.routes.draw do # |map|
     resources :users
     resources :overviews, :only => [:index]
 
+    namespace :plans do
+      resources :features
+    end
+
     namespace :seller do
       resources :companies
       resources :cities

@@ -1,0 +1,12 @@
+<h1> Feature </h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @feature.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_plans_feature_path(@feature), :class => 'button' %> |
+  <%= link_to "Destroy", admin_plans_feature_path(@feature), :confirm => 'Are you sure?', :method => :delete, :class => 'button' %> |
+  <%= link_to "View All", admin_plans_features_path, :class => 'button' %>
+</p>

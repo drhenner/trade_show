@@ -1,0 +1,8 @@
+<h1> Edit Feature </h1>
+
+<%= form_for(@feature, :url => admin_plans_feature_path(@feature)) do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>
+
+  <%= link_to 'Show', admin_plans_feature_path( @feature ), :class => 'button' %> |
+  <%= link_to 'View All', admin_plans_features_path, :class => 'button' %>
