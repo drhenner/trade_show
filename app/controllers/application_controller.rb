@@ -66,6 +66,11 @@ class ApplicationController < ActionController::Base
     false
   end
 
+  def redirect_if_logged_out
+    session[:return_to] = url_for( request.env["HTTP_REFERER"] )
+    require_user
+  end
+
   def secure_session
     if Rails.env == 'production' || is_production_simulation
       if session_cart && !request.ssl?

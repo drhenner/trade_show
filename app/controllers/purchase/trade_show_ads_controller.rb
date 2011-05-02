@@ -1,4 +1,6 @@
 class Purchase::TradeShowAdsController < ApplicationController
+  before_filter :redirect_if_logged_out
+
   def new
     form_info
     @booth = Booth.new
@@ -7,7 +9,7 @@ class Purchase::TradeShowAdsController < ApplicationController
   def create
     @booth = Booth.new(params[:booth])
     if @booth.save
-      flash[:notice] = "Successfully created trade show ad."
+      flash[:notice] = "Successfully built Booth."
       redirect_to purchase_trade_show_ad_url(@booth)
     else
       form_info
@@ -25,7 +27,7 @@ class Purchase::TradeShowAdsController < ApplicationController
     if current_user.admin?
       @companies    = Company.all.map{|c| [c.name, c.id]}
     else
-      @companies    =  [current_user.company.name, current_user.company.id]}
+      @companies    =  [current_user.company.name, current_user.company.id]
     end
     @trade_shows  = TradeShow.future.map{|ts| [ts.name, ts.id]}
   end
