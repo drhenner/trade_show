@@ -34,7 +34,7 @@ class Feature < ActiveRecord::Base
       :description  => 'Your Booth will be have a link to your web site.'
     },
     { :name         => COMPANY_DESCRIPTION,
-      :price        => 100.00,
+      :price        => 50.00,
       :description  => 'Your Booth will be have a detailed description.'
     },
     { :name         => COMPANY_PICTURES,
@@ -50,7 +50,7 @@ class Feature < ActiveRecord::Base
       :description  => 'You will have description of your products relating to your booth.'
     },
     { :name         => PRODUCT_PICTURES,
-      :price        => 300.00,
+      :price        => 350.00,
       :description  => 'You will have images of your products relating to your booth.'
     }
   ]
